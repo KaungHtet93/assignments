@@ -4,46 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css"> -->
     <link rel="shortcut icon" href="images.jpg" type="image/x-icon">
     <title>Student Registration</title>
     <style>
-        /* .main{
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .main {
             display: grid;
             grid-template-columns: 50% 50%;
-        } */
-        /* tr:nth-child(even) {
-            background-color: red;
-        } */
-        
-    </style>
-    <script>
-        function save() {
-            var name=document.getElementById('name').value;
-            var email=document.getElementById('email').value;
-            var phone=document.getElementById('phone').value;
-            document.getElementById('data').innerHTML="<td>"+name+"</td> <td>"+email+"</td> <td>"+phone+"</td>";
-            
         }
-    </script>
+
+        tr:nth-child(even) {
+            background-color: rgb(235, 226, 226);
+        }
+
+        .left {
+            text-align: center;
+            background-color: skyblue;
+            margin-top: 20px;
+            border-radius: 50px;
+            height: 300px;
+            width: 75%;
+            margin: auto;
+        }
+        @media screen and (max-width:640px){
+            .main{
+                display: block;
+            }
+            .left{
+                width:100%;
+            }
+        }
+        .right{
+            margin: 20px;
+        }
+        table{
+            width: 100%;
+        }
+        th{
+            color: white;
+            background-color: green;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            margin: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button[type=submit] {
+            background-color: green;
+        }
+        button[type=submit]:hover {
+            background-color: lime;
+        }
+        button[type=button] {
+            background-color: red;
+        }
+        button[type=button]:hover {
+            background-color: crimson;
+        }
+        button:active{
+            background-color: gray;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-6">
+        <div class="main">
+            <div sty class="left">
                 <h1>Student Registration</h1>
-                    <label for="name" class="form-check-label">Name:</label>
-                    <input type="text" name="name" id="name" class="form-control">
-                    <label for="email" class="form-check-label">Email:</label>
-                    <input type="email" name="email" id="email" class="form-control">
-                    <label for="phone" class="form-check-label">Phone</label>
-                    <input type="tel" name="phone" class="form-control" id="phone">
-                    <button class="btn btn-success" type="submit" onclick="save()">Save</button>
-                    <button class="btn btn-danger" type="reset">Reset</button>
+                <hr>
+                <label for="name" class="form-check-label">Name:</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+                <br>
+                <label for="email" class="form-check-label">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+                <br>
+                <label for="phone" class="form-check-label">Phone:</label>
+                <input type="tel" name="phone" class="form-control" id="phone" required>
+                <br>
+                <button class="btn btn-success" type="submit" id="save">Save</button>
+                <button class="btn btn-danger" type="button" id="reset">Reset</button>
             </div>
-            <div class="col-6">
-                <table class="table table-striped">
+            <div class="right">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -52,16 +111,38 @@
                         </tr>
 
                     </thead>
-                    <tbody>
-                        <span id="data">
-                            
-                        </span>
+                    <tbody id="data">
+
 
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('save').addEventListener("click", saveInput);
+        document.getElementById('reset').addEventListener("click", reset);
+        function saveInput() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var tr = document.createElement('tr');
+            var td1 = tr.appendChild(document.createElement('td'));
+            var td2 = tr.appendChild(document.createElement('td'));
+            var td3 = tr.appendChild(document.createElement('td'));
+            td1.innerHTML = name;
+            td2.innerHTML = email;
+            td3.innerHTML = phone;
+            document.getElementById('data').appendChild(tr);
+            // reset();
+        }
+        function reset(){
+            // alert("test");
+            document.getElementById('name').value="";
+            document.getElementById('email').value="";
+            document.getElementById('phone').value="";
+        }
+    </script>
 </body>
 
 </html>
