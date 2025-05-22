@@ -4,145 +4,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css"> -->
-    <link rel="shortcut icon" href="images.jpg" type="image/x-icon">
-    <title>Student Registration</title>
-    <style>
-        body {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
+    <title>CV Form</title>
+    <link rel="stylesheet" href="all.min.css">
 
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="shortcut icon" href="images.jpg" type="image/x-icon">
+    <style>
         .main {
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 30% 70%;
+        }
+        .profile {
+            background-color: darkblue;
+            padding: 25px;
+            /* margin: auto;  */
+            color: white;
         }
 
-        tr:nth-child(even) {
-            background-color: rgb(235, 226, 226);
+        h1 {
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
-        .left {
-            text-align: center;
-            background-color: skyblue;
-            margin-top: 20px;
-            border-radius: 50px;
-            height: 300px;
-            width: 75%;
+        img {
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        li>a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        li>a:hover {
+            color: cyan;
+        }
+
+        #head {
+            width: 60%;
+            display: inline;
             margin: auto;
-        }
-        @media screen and (max-width:640px){
-            .main{
-                display: block;
-            }
-            .left{
-                width:100%;
-            }
-        }
-        .right{
-            margin: 20px;
-        }
-        table{
-            width: 100%;
-        }
-        th{
-            color: white;
-            background-color: green;
+            /* border: 5px solid navy; */
         }
 
-        input {
-            padding: 5px;
-            margin: 5px;
-        }
+        #head h3 {
+            text-transform: uppercase;
+            border-bottom: 5px solid navy;
 
-        button {
-            margin: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
-            color: white;
-            border-radius: 5px;
-            border: none;
         }
-
-        button[type=submit] {
-            background-color: green;
+        .info  hr{
+            border: 3px solid black;
         }
-        button[type=submit]:hover {
-            background-color: lime;
+        li > h2, h3{
+            color: gray;
         }
-        button[type=button] {
-            background-color: red;
-        }
-        button[type=button]:hover {
-            background-color: crimson;
-        }
-        button:active{
-            background-color: gray;
-        }
+        /* h3 {
+            border-bottom: 3px solid navy;
+        } */
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="main">
-            <div sty class="left">
-                <h1>Student Registration</h1>
+    <div class="main">
+        <div class="profile">
+            <img src="photo_2025-05-21_21-56-24.jpg" alt="Picture" width="200" height="200">
+            <h1>Contact</h1>
+            <hr>
+            <ul>
+                <li> <i class="fa-solid fa-phone-volume me-2"></i>+959 783 91 4595
+                </li>
+                <li><i class="fa-solid fa-envelope me-2"></i>danielkaung2005@gmail.com</li>
+                <li><i class="fa-solid fa-location-dot me-2"></i>19 Zezawah,Thanthumar Rd, Yangon</li>
+                <li><i class="fa-solid fa-globe me-2"></i><a href="#" title="Link to this">cv.form.html</a></li>
+            </ul>
+            <br>
+            <h1>EDUCATION</h1>
+            <hr>
+            <ul>
+                <li>GED</li>
+                <li>IP</li>
+                <li>FE</li>
+            </ul>
+            <h1>SKILLs</h1>
+            <hr>
+            <ul>
+                <li>Project Mangement</li>
+                <li>Teamwork</li>
+                <li>Time Management</li>
+                <li>Critical Thinking</li>
+            </ul>
+            <h1>LANGUAges</h1>
+            <hr>
+            <ul>
+                <li>English</li>
+                <li>Japanese</li>
+                <li>Burmese</li>
+            </ul>
+        </div>
+        <div class="info p-5">
+            <section class="">
+                <div id="head">
+                    <h1><b>Kaung</b> HTET</h1>
+                    <h3>marketing manager</h3>
+                </div>
+            </section>
+            <section class="pt-5">
+                <h1>Profile</h1>
                 <hr>
-                <label for="name" class="form-check-label">Name:</label>
-                <input type="text" name="name" id="name" class="form-control" required>
-                <br>
-                <label for="email" class="form-check-label">Email:</label>
-                <input type="email" name="email" id="email" class="form-control" required>
-                <br>
-                <label for="phone" class="form-check-label">Phone:</label>
-                <input type="tel" name="phone" class="form-control" id="phone" required>
-                <br>
-                <button class="btn btn-success" type="submit" id="save">Save</button>
-                <button class="btn btn-danger" type="button" id="reset">Reset</button>
-            </div>
-            <div class="right">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                        </tr>
-
-                    </thead>
-                    <tbody id="data">
-
-
-                    </tbody>
-                </table>
-            </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus laboriosam labore doloribus eveniet praesentium quod molestiae at voluptas. Ex, doloremque. Quas placeat nobis unde quis amet, harum pariatur eum?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id sit reiciendis doloremque cupiditate adipisci perferendis sequi blanditiis consequatur repudiandae. Veritatis, minus est hic aut asperiores excepturi ea expedita fugit minima.</p>
+            </section>
+            <section class="pt-5">
+                <h1>Work Experience</h1>
+                <hr>
+                <ul style="list-style-type: disc;">
+                    <li>
+                        <h2 style="display: inline;"><b>Workplace Name</b></h2> <h2 style="display: inline; float: inline-end;">2030- Present</h2>
+                        <h3>Job Name</h3>
+                        <ul style="list-style-type: disc;">
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Quisquam natus inventore expedita eligendi magnam ratione saepe dolores est animi doloremque culpa voluptatibus accusantium suscipit quidem, doloribus, molestiae, adipisci corrupti temporibus.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 style="display: inline;"><b>Workplace Name</b></h2> <h2 style="display: inline; float: inline-end;">2030- Present</h2>
+                        <h3>Job Name</h3>
+                        <ul style="list-style-type: disc;">
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Quisquam natus inventore expedita eligendi magnam ratione saepe dolores est animi doloremque culpa voluptatibus accusantium suscipit quidem, doloribus, molestiae, adipisci corrupti temporibus.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2 style="display: inline;"><b>Workplace Name</b></h2> <h2 style="display: inline; float: inline-end;">2030- Present</h2>
+                        <h3>Job Name</h3>
+                        <ul style="list-style-type: disc;">
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </li>
+                            <li>Quisquam natus inventore expedita eligendi magnam ratione saepe dolores est animi doloremque culpa voluptatibus accusantium suscipit quidem, doloribus, molestiae, adipisci corrupti temporibus.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1>Reference</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Estille Darcy</h4>
+                        <h5>Wardiere Inc. / CTO</h5>
+                        <p>Phone: 123-456-7890</p>
+                        <p>Email: hello@email.com</p>
+                    </div>
+                    <div class="col-6">
+                        <h4>Estille Darcy</h4>
+                        <h5>Wardiere Inc. / CTO</h5>
+                        <p>Phone: 123-456-7890</p>
+                        <p>Email: hello@email.com</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-    <script>
-        document.getElementById('save').addEventListener("click", saveInput);
-        document.getElementById('reset').addEventListener("click", reset);
-        function saveInput() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
-            var tr = document.createElement('tr');
-            var td1 = tr.appendChild(document.createElement('td'));
-            var td2 = tr.appendChild(document.createElement('td'));
-            var td3 = tr.appendChild(document.createElement('td'));
-            td1.innerHTML = name;
-            td2.innerHTML = email;
-            td3.innerHTML = phone;
-            document.getElementById('data').appendChild(tr);
-            // reset();
-        }
-        function reset(){
-            // alert("test");
-            document.getElementById('name').value="";
-            document.getElementById('email').value="";
-            document.getElementById('phone').value="";
-        }
-    </script>
 </body>
 
 </html>
